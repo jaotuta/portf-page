@@ -1,59 +1,98 @@
 
-let inputt = document.getElementById("mensagem")
+const inputt = document.getElementById("mensagem")
+const text1 = "/Navegador: OK, 1 minutinho, estou preparando a papelada para o back-end..."
+const text2 = "/Navegador: Tudo certo, te vejo daqui a pouquinho!"
+const text3 = "/back-end: Aoba...Vejamos uma requisição sobre o Sr. João"
+const text4 = "/back-end: Certo, estarei te encaminhando para o Controller."
+const text5 = "/Controller: Vejamos... um GET, show, já passei pro pessoal do Service."
+const text6 = "/Service: Oi, Tudo bem? bom, vou ali buscar os arquivos, já volto."
+const text7 = "/Service: Demorei né? ta uma bagunça por aqui, já pedi para mudarmos pra SQL."
+const text8 = "/Service: Esse negócio de MongoDb, está me deixando louco..."
+const text9 = "/Service: Enfim, Aqui estão os Arquivos, que pediu... Obg e volte Sempre."
+const text10 = "/Navegador: Oi de novo, trouxe os arquivos do Sr. João ???"
+const text11 = "/Navegador: Só um instante que estou renderizando na tela.."
+const intervaloEntreLetras = 65;
+const esperaPadrao = intervaloEntreLetras*1.4;
 
 inputt.addEventListener('keydown', function (event) {
     console.log(event.target.value)
 
     if (KeyboardEvent.keyCode !== 13 && event.target.value == 's' || event.target.value == 'S') {
-        let texto = document.getElementById('texto')
-        console.log(inputt)
-        texto.classList.add("invisivel")
-        texto.classList.remove('typingAni')
         enter();
 
     }
     else if (KeyboardEvent.keyCode !== 13 && event.target.value == 'n' || event.target.value == 'N') {
-        let texto = document.getElementById('texto')
-        texto.classList.add("invisivel")
-        texto.classList.remove('typingAni')
         chamaSeNao();
-
     }
 }
 )
 
-
-function addPonto(conteudo) {
-    return conteudo + '.';
-}
-
-function setaEspera1(tempoIntervalo) {
-    let intervalo = setInterval(() => {
-        clearInterval(intervalo)
-        chama()
-    }, tempoIntervalo)
-
-}
-
-
 function enter() {
-    setaEspera1(500)
+    typeWritter (text1);
+    setTimeout(() => pontos(), text1.length * esperaPadrao)
 }
 
-function chama() {
-    let textoPos = document.getElementById('pos')
-    let texto = document.getElementById('texto')
-    textoPos.textContent = texto.innerText
-    texto.classList.remove('invisivel')
-    texto.classList.add('typingAni')
-    texto.textContent = '/Navegador: OK, 1 minutinho, estou preparando a papelada para o back-end...'
-    let intervaloTres = setInterval(() => {
-        clearInterval(intervaloTres)
-        setaEspera2(600)
-    }, 4500)
-
-
+function pontos () {
+    typeWritterLoading (1000)
+    setTimeout(() =>{ 
+        const divPre = getElement('.pontos');
+        divPre.innerText = "";
+        linhaDois()
+    }, 3100)
 }
+
+function linhaDois () {
+    typeWritter (text2);
+    setTimeout(() => linhaTres(), text2.length * esperaPadrao)
+}
+
+function linhaTres () {
+    typeWritter (text3);
+    setTimeout(() => linhaQuatro(), text3.length * esperaPadrao)
+}
+function linhaQuatro () {
+    typeWritter (text4);
+    setTimeout(() => linhaCinco(), text4.length * esperaPadrao)
+}
+function linhaCinco () {
+    typeWritter (text5);
+    setTimeout(() => linhaSeis(), text5.length * esperaPadrao)
+}
+function linhaSeis () {
+    typeWritter (text6);
+    setTimeout(() => pontos2(), text6.length * esperaPadrao)
+}
+
+function pontos2 () {
+    typeWritterLoading (3000)
+    setTimeout(() =>{ 
+        const divPre = getElement('.pontos');
+        divPre.innerText = "";
+        linhaSete()
+    }, 9300)
+}
+
+function linhaSete () {
+    typeWritter (text7);
+    setTimeout(() => linhaOito(), text7.length * esperaPadrao)
+}
+function linhaOito () {
+    typeWritter (text8);
+    setTimeout(() => linhaNove(), text8.length * esperaPadrao)
+}
+function linhaNove () {
+    typeWritter (text9);
+    setTimeout(() => linhaDez(), text9.length * esperaPadrao)
+}
+function linhaDez () {
+    typeWritter (text10);
+    setTimeout(() => linhaOnze(), text10.length * esperaPadrao)
+}
+function linhaOnze () {
+    typeWritter (text11);
+    setTimeout(() => final(), text10.length * esperaPadrao)
+}
+
 function chamaSeNao() {
     let textoPos = document.getElementById('pos')
     let texto = document.getElementById('texto')
@@ -64,164 +103,26 @@ function chamaSeNao() {
 
 }
 
-function setaEspera2(tempoIntervalo) {
-    let texto = document.getElementById('texto')
-    let contentOne = document.getElementById('pontos')
-    let intervalo = setInterval(() => {
-        console.log(contentOne.innerText);
-        let textoPonto = contentOne.innerText;
-        textoPonto = addPonto(textoPonto)
-        contentOne.textContent = textoPonto
-        texto.classList.add('invisivel')
-        texto.classList.remove('typingAni')
-
-        if (contentOne.innerText != '...') {
-            setaEspera2(tempoIntervalo);
-            clearInterval(intervalo)
-        } else {
-            console.log('Saiu2')
-            clearInterval(intervalo)
-            let intervaloDois = setInterval(() => {
-                contentOne.textContent = ''
-                clearInterval(intervaloDois)
-                chama2()
-            }, 750)
-
-        }
-    }, tempoIntervalo)
-
+function typeWritter (texto) {
+    const divPos = getElement('.pos');
+    const div = getElement('.texto-principal');
+    divPos.textContent = div.innerText
+    const textoArray = texto.split('');
+    div.innerHTML = '';
+    textoArray.forEach((letra, i) => {
+        setTimeout(() => div.innerHTML += letra, intervaloEntreLetras * i)
+    });
 }
-
-function chama2() {
-    let textoPos = document.getElementById('pos')
-    let texto = document.getElementById('texto')
-    textoPos.textContent = texto.innerText
-    texto.classList.remove('invisivel')
-    texto.classList.add('typingAni')
-    texto.textContent = '/back-end: Aoba...Vejamos uma requisição sobre o Sr. João'
-    let intervaloTres = setInterval(() => {
-        clearInterval(intervaloTres)
-        texto.classList.remove('typingAni')
-    }, 4500)
-    let intervaloTres1 = setInterval(() => {
-        let textoPos = document.getElementById('pos')
-        let texto = document.getElementById('texto')
-        textoPos.textContent = texto.innerText
-        texto.classList.add('typingAni')
-        texto.textContent = '/back-end: Certo, estarei te encaminhando para o Controller.'
-        clearInterval(intervaloTres1)
-    }, 5000)
-    let intervaloTres2 = setInterval(() => {
-        clearInterval(intervaloTres2)
-        texto.classList.remove('typingAni')
-        console.log('Fim')
-    }, 8700)
-    let intervaloTres3 = setInterval(() => {
-        let textoPos = document.getElementById('pos')
-        let texto = document.getElementById('texto')
-        textoPos.textContent = texto.innerText
-        texto.classList.add('typingAni')
-        texto.textContent = '/Controller: Vejamos... um GET, show, já passei pro pessoal do Service.'
-        clearInterval(intervaloTres3)
-    }, 10000)
-    let intervaloTres3emeio = setInterval(() => {
-        clearInterval(intervaloTres3emeio)
-        texto.classList.remove('typingAni')
-        console.log('Fim')
-    }, 15200)
-    let intervaloTres4 = setInterval(() => {
-        let textoPos = document.getElementById('pos')
-        let texto = document.getElementById('texto')
-        textoPos.textContent = texto.innerText
-        texto.classList.add('typingAni')
-        texto.textContent = '/Service: Oi, Tudo bem? bom, vou ali buscar os arquivos, já volto.'
-        clearInterval(intervaloTres4)
-    }, 15800)
-    let intervaloTres5 = setInterval(() => {
-        let pontos = document.getElementById('pontos')
-        pontos.textContent = '...'
-        pontos.classList.add('typingAni2')
-        clearInterval(intervaloTres5)
-        texto.classList.remove('typingAni')
-        console.log('Fim')
-
-    }, 21000)
-    let intervaloTres6 = setInterval(() => {
-        let pontos = document.getElementById('pontos')
-        let textoPos = document.getElementById('pos')
-        let texto = document.getElementById('texto')
-        pontos.textContent = ''
-        pontos.classList.remove('typingAni2')
-        textoPos.textContent = texto.innerText
-        texto.classList.add('typingAni')
-        texto.textContent = '/Service: Demorei né? ta uma bagunça por aqui, já pedi para mudarmos pra SQL.'
-        clearInterval(intervaloTres6)
-    }, 31000)
-    let intervaloTres7 = setInterval(() => {
-        clearInterval(intervaloTres7)
-        texto.classList.remove('typingAni')
-        console.log('Fim')
-    }, 36000)
-    let intervaloTres8 = setInterval(() => {
-        let textoPos = document.getElementById('pos')
-        let texto = document.getElementById('texto')
-        textoPos.textContent = texto.innerText
-        texto.classList.add('typingAni')
-        texto.textContent = '/Service: Esse negócio de MongoDb, está me deixando louco...'
-        clearInterval(intervaloTres8)
-    }, 37000)
-    let intervaloTres9 = setInterval(() => {
-        clearInterval(intervaloTres9)
-        texto.classList.remove('typingAni')
-        console.log('Fim')
-    }, 40500)
-    let intervaloTres10 = setInterval(() => {
-        let textoPos = document.getElementById('pos')
-        let texto = document.getElementById('texto')
-        textoPos.textContent = texto.innerText
-        texto.classList.add('typingAni')
-        texto.textContent = '/Service: Enfim, Aqui estão os Arquivos, que pediu... Obg e volte Sempre.'
-        clearInterval(intervaloTres10)
-    }, 41800)
-    let intervaloTres11 = setInterval(() => {
-        clearInterval(intervaloTres11)
-        texto.classList.remove('typingAni')
-        console.log('Fim')
-    }, 47000)
-    let intervaloTres12 = setInterval(() => {
-        let textoPos = document.getElementById('pos')
-        let texto = document.getElementById('texto')
-        textoPos.textContent = texto.innerText
-        texto.classList.add('typingAni')
-        texto.textContent = '/Navegador: Oi de novo, trouxe os arquivos do Sr. João ???'
-        clearInterval(intervaloTres12)
-    }, 47300)
-    let intervaloTres13 = setInterval(() => {
-        clearInterval(intervaloTres13)
-        texto.classList.remove('typingAni')
-        console.log('Fim')
-    }, 52200)
-    let intervaloTres14 = setInterval(() => {
-        let textoPos = document.getElementById('pos')
-        let texto = document.getElementById('texto')
-        textoPos.textContent = texto.innerText
-        texto.classList.add('typingAni')
-        texto.textContent = '/Navegador: Só um instante que estou renderizando na tela..'
-        clearInterval(intervaloTres14)
-    }, 52400)
-    let intervaloTres15 = setInterval(() => {
-        let pontos = document.getElementById('pontos')
-        pontos.textContent = '...'
-        pontos.classList.add('typingAni2')
-        clearInterval(intervaloTres15)
-        texto.classList.remove('typingAni')
-        console.log('Fim')
-
-    }, 58000)
-    let intervaloTres16 = setInterval(() => {
-        clearInterval(intervaloTres16)
-        final();
-    }, 61500)
+function typeWritterLoading (tempo, texto = '...') {
+    const divPre = getElement('.pontos');
+    const textoArray = texto.split('');
+    divPre.innerHTML = '';
+    textoArray.forEach((letra, i) => {
+        setTimeout(() => divPre.innerHTML += letra, tempo * i)
+    });
+}
+function getElement ( className ) {
+    return document.querySelector(className)
 }
 
 function final() {
@@ -237,7 +138,7 @@ function final() {
     </head>
     
     <body>
-        <div class="container">
+        <div class="container2">
             <div class="top">
                 <div class="foto">
                     <img src="https://cdn-learn.adafruit.com/assets/assets/000/075/200/medium800/gaming_mort_walk.gif?1556902218"
