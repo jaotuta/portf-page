@@ -46,3 +46,64 @@ input {
 .pontos {
     padding: 7px;
 }
+
+/*-----------------------------------------------------------*/
+
+.container-cv {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(5, 120, 245);
+}
+.dados {
+    display: flex;
+    width: 80vw;
+    height: 350px;
+    margin: 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color: rgb(5, 120, 245);
+
+}
+.education {
+    width: 80vw;
+    height: 150px;
+    background-color: rgb(32, 34, 38);
+    margin: 8px;
+}
+.work-xp {
+    width: 80vw;;
+    height: 150px;
+    background-color: rgb(32, 34, 38);
+    margin: 8px;
+}
+.social {
+    width: 80vw;
+    height: 150px;
+    background-color: rgb(42, 48, 59);
+    margin: 8px;
+}
+
+.foto {
+    border-radius: 50%;
+    width: 35%;
+
+}
+.foto>img {
+    width: 90%;
+    filter: sepia(100%);
+}
+.infos{
+    width: 65%;
+    padding: 20px;
+    color: rgb(5, 120, 245);
+}
+.nome {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: rgb(5, 120, 245);
+
+}
