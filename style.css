@@ -57,35 +57,78 @@ input {
     align-items: center;
     color: rgb(5, 120, 245);
 }
+
+
+.education {
+    width: 80vw;
+    margin: 8px;
+    border-top: 1px white solid;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.education>div {
+    flex: 1 1 350px;
+    padding: 10px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 0.8em;
+    color: white;
+    margin-right: 20px;
+    line-height: 1.7;
+
+}
+.tituloGrad {
+    color: white;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+.subTitulo {
+    margin-bottom: 8px;
+}
+.work-xp {
+    width: 80vw;
+    margin: 8px;
+    border-top: 1px white solid;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.work-xp>div {
+    flex: 1 1 350px;
+    padding: 10px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 0.8em;
+    color: white;
+    margin-right: 20px;
+    line-height: 1.7;
+}
+.social {
+    width: 80vw;
+    height: 50px;
+    background-color: rgb(42, 48, 59);
+    margin: 8px;
+}
 .dados {
     display: flex;
-    width: 80vw;
+    max-width: 80vw;
     height: auto;
-    margin: 8px;
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     color: rgb(5, 120, 245);
+    flex-wrap: wrap;
 
 }
-.education {
+.tituloTopicos{
     width: 80vw;
-    height: 150px;
-    margin: 8px;
-    border-top: 1px white solid;
-    padding: 10px;
-}
-.work-xp {
-    width: 80vw;;
-    height: 150px;
-    background-color: rgb(32, 34, 38);
-    margin: 8px;
-}
-.social {
-    width: 80vw;
-    height: 150px;
-    background-color: rgb(42, 48, 59);
-    margin: 8px;
+    color: darkorange;
 }
 
 .foto {
@@ -93,8 +136,9 @@ input {
     width: 30%;
     display: flex;
     padding: 8px;
-    margin: 20px;
-
+    margin: 10px;
+    flex: 1 1 300px;
+    max-width: 300px;
 }
 .foto>img {
     width: 250px;
@@ -107,9 +151,11 @@ input {
     margin-right: auto;
 }
 .infos{
-    width: 70%;
+    flex: 2 1 400px;
+    width: 90%;
     padding: 20px;
     color: rgb(255, 255, 255);
+    flex: 2 1 450px;
 
 }
 .nome {
@@ -120,7 +166,9 @@ input {
 .descri {
     margin-top: 15px;
     font-size: 0.9em;
-    
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.4;
 }
 
 .sub-titulo {
