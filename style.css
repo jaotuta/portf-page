@@ -111,9 +111,20 @@ input {
 .social {
     width: 80vw;
     height: 50px;
-    background-color: rgb(42, 48, 59);
     margin: 8px;
+    display: flex;
+    justify-content:flex-end ;
 }
+
+.social img {
+        
+        max-width: 80px;
+        height: auto;
+        padding: 12px;
+        filter: invert(100%);
+
+}
+
 .dados {
     display: flex;
     max-width: 80vw;
