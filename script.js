@@ -138,45 +138,34 @@ function final() {
     </head>
     
     <body>
-        <div class="container2">
-            <div class="top">
-                <div class="foto">
-                    <img src="https://cdn-learn.adafruit.com/assets/assets/000/075/200/medium800/gaming_mort_walk.gif?1556902218"
-                        alt="" class="imagem">
-                </div>
-                <div class="func">
-                    <div class="textFunc">
-                        FullStack Developer
-                    </div>
-                </div>
+        <div class="container-cv">
+            <div class="dados">
                 <div class="infos">
-                    <div class="info-texto">
-                        <span class="nome">João Lucas Cruz</span> <br>
-    
-                        <div class="descri">
-                            Desde criança sempre fui movido a descobrir coisas novas,<br> isso me impulsionou
-                            a aprender muitas coisas durante toda<br> minha caminhada, a maior delas a tecnologia. Esta que<br>
-                            venho aprendendo a mais de 10 anos, seja na área da<br> Engenharia ou no campo
-                            da Tecnologia da Informação. 
-                            Estes<br> são alguns dos meus interesses atualmente:<br><br>
-                            Front-end: | JavaScript | HTML | CSS | Angular <br>
-                            Back-end: Java | Apache | API Rest | Spring Boot | JUnit |<br>
-                            | Postgres | MongoDB | Git | Docker |<br>
-                        </div>
+                    <span class="nome">João Lucas Cruz</span> <br>
+                    <div class="sub-titulo" > Desenvolvedor | Java | Angular | JavaScript | Spring Boot | Electrical Engineer</div>
+                    <div class="descri">
+                        Desde criança sempre fui movido a descobrir coisas novas, isso me impulsionou
+                        a aprender muitas coisas durante toda minha caminhada, a maior delas a tecnologia. Esta que
+                        venho aprendendo a mais de 10 anos, seja na área da Engenharia ou no campo
+                        da Tecnologia da Informação.
                     </div>
                 </div>
-                <div class="barra"></div>
-                <div class="contatos"></div>
-            </div>
-            <div class="bottom">
-                <div class="prof">
     
-                </div>
-                <div class="barra2"></div>
-                <div class="estudos">
-    
+                <div class="foto">
+                    <img src="https://raw.githubusercontent.com/jaotuta/portf-page/main/assets/safeimagekit-pixel-art.png"
+                        alt="" class="foto">
                 </div>
             </div>
+            <div class="education">
+                education
+            </div>
+            <div class="work-xp">
+                works
+            </div>
+            <div class="social">
+                social
+            </div>
+    
         </div>
     
     

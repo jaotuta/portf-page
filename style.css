@@ -90,20 +90,38 @@ input {
 .foto {
     border-radius: 50%;
     width: 35%;
+    display: flex;
 
 }
 .foto>img {
-    width: 90%;
-    filter: sepia(100%);
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+    filter: saturate(40);
+    border: 3px rgb(255, 255, 255) dotted;
+    filter: hue-rotate(240deg);
+    margin-left: auto;
+    margin-right: auto;
 }
 .infos{
     width: 65%;
     padding: 20px;
-    color: rgb(5, 120, 245);
+    color: rgb(255, 255, 255);
+
 }
 .nome {
     font-size: 1.3em;
     font-weight: 600;
-    color: rgb(5, 120, 245);
+    color: rgb(100, 157, 61);
 
+}
+.descri {
+    margin-top: 15px;
+    font-size: 0.9em;
+    
+}
+
+.sub-titulo {
+    color: rgb(255, 255, 255);
+    margin-top: 5px;
 }
