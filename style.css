@@ -60,7 +60,7 @@ input {
 .dados {
     display: flex;
     width: 80vw;
-    height: 350px;
+    height: auto;
     margin: 8px;
     justify-content: center;
     align-items: center;
@@ -71,8 +71,9 @@ input {
 .education {
     width: 80vw;
     height: 150px;
-    background-color: rgb(32, 34, 38);
     margin: 8px;
+    border-top: 1px white solid;
+    padding: 10px;
 }
 .work-xp {
     width: 80vw;;
@@ -89,8 +90,10 @@ input {
 
 .foto {
     border-radius: 50%;
-    width: 35%;
+    width: 30%;
     display: flex;
+    padding: 8px;
+    margin: 20px;
 
 }
 .foto>img {
@@ -104,15 +107,14 @@ input {
     margin-right: auto;
 }
 .infos{
-    width: 65%;
+    width: 70%;
     padding: 20px;
     color: rgb(255, 255, 255);
 
 }
 .nome {
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: 600;
-    color: rgb(100, 157, 61);
 
 }
 .descri {
@@ -124,4 +126,27 @@ input {
 .sub-titulo {
     color: rgb(255, 255, 255);
     margin-top: 5px;
+}
+
+.efeito {
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(22, 23, 26);
+    width: 100vw;
+    height: 100vh;
+}
+
+.efeitoTela {
+    animation: tela 8000ms steps(65) 100ms both ;
+}
+
+
+@keyframes tela {
+    from {
+        height: 100vh;
+    }
+
+    to {
+        height: 0vh;
+    }
 }
